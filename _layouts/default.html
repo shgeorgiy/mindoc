@@ -1,19 +1,20 @@
 <html>
-    <head>
-        <meta charset = "UTF-8">
-        <title>{{ site.title }}</title>
-        <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
-    </head>
-    <body>
-            {% include header.html %}
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
+    <!-- Include tab styles -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/tabstyles.css">
+</head>
+<body>
+    {% include header.html %}
+    {% include sidenavbar.html %}
+    <div class="content">
+        {{ content }}
+    </div>
 
-            {% include sidenavbar.html %}
-            
-            <div class="content">
-            {{ content }}
-            </div>
-    </body>
-   
-    
-<script src="{{ site.baseurl }}{% link assets/js/nav.js %}"></script>
+    <!-- Include tab scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/tabs.js"></script>
+</body>
 </html>
